@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelayanan Masyarakat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pelayanan Masyarakat</h1>
+    <nav>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="beranda" class="hero">
+    <h2>Selamat Datang di Sistem Pelayanan</h2>
+    <p>Kami siap membantu kebutuhan administrasi Anda secara cepat dan mudah.</p>
+    <button onclick="scrollToLayanan()">Lihat Layanan</button>
+  </section>
+
+  <section id="layanan">
+    <h2>Daftar Layanan</h2>
+    <div class="layanan-container">
+      <div class="card">
+        <h3>Pengajuan Surat</h3>
+        <p>Ajukan berbagai jenis surat resmi seperti surat domisili, surat pengantar, dan lainnya.</p>
+        <button>Ajukan</button>
+      </div>
+      <div class="card">
+        <h3>Pelaporan</h3>
+        <p>Lapor masalah di lingkungan sekitar untuk ditindaklanjuti oleh pihak terkait.</p>
+        <button>Lapor</button>
+      </div>
+      <div class="card">
+        <h3>Konsultasi</h3>
+        <p>Dapatkan informasi dan konsultasi tentang pelayanan masyarakat.</p>
+        <button>Hubungi</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <form id="formKontak">
+      <label>Nama:</label>
+      <input type="text" name="nama" required>
+      <label>Email:</label>
+      <input type="email" name="email" required>
+      <label>Pesan:</label>
+      <textarea name="pesan" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Pelayanan Masyarakat. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
