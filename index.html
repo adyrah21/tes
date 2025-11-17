@@ -1,138 +1,186 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biro Hukum</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Sedikit tambahan gaya */
-    .hero {
-      background: linear-gradient(to right, #007bff, #00aaff);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      transition: 0.3s; 
-    }
-    footer {
-      background: #003366;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biro Hukum</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* ====================== HERO ====================== */
+.hero {
+    position: relative;
+    min-height: 100vh; /* hero otomatis tingginya full screen */
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SLIDESHOW */
+.hero-slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    z-index: 1;
+}
+
+.hero-slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.1);           /* efek zoom */
+    transition: opacity 1.8s ease-in-out, transform 4s ease-out;
+}
+
+.hero-slideshow img.active {
+    opacity: 1;
+    transform: scale(1);             /* zoom perlahan */
+}
+
+/* TEKS HERO */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7); /* bayangan teks */
+}
+
+.hero-content h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.hero-content h3 {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* ====================== CARD ANIMASI ====================== */
+
+.card {
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+    background: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="#">Biro Hukum</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-        </ul>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Biro Hukum</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="beranda" class="hero">
+
+    <!-- SLIDESHOW DENGAN EFEK -->
+    <div class="hero-slideshow">
+        <img src="img/slide1.jpg" class="slide active">
+        <img src="img/slide2.jpg" class="slide">
+        <img src="img/slide3.jpg" class="slide">
+    </div>
+
+    <!-- TEKS HERO -->
+    <div class="hero-content">
+        <img src="logo.png" height="100"><br><br>
+        <h1>Selamat Datang di Biro Hukum</h1>
+        <h3>Sekretariat Daerah Provinsi Kalimantan Utara</h3>
+        <p>Kami siap membantu kebutuhan administrasi Anda dengan cepat, mudah, dan transparan.</p>
+        <a href="#layanan" class="btn btn-light btn-lg">Lihat Layanan</a>
+    </div>
+
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan" class="container mt-5 pb-5">
+  <h2 class="text-center mb-4">Daftar Layanan</h2>
+
+  <div class="row text-center">
+
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <h5>PERDA & PERGUB</h5>
+        <p>Pengajuan Perda & Pergub melalui Aplikasi E-Perda.</p>
+        <a href="#" class="btn btn-primary">Ajukan Sekarang</a>
       </div>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section id="beranda" class="hero">
-    <img src="logokaltara.png"
-      width="60"   
-      height="auto">
-    <div class="container">
-      <h1 class="display-5 fw-bold">Selamat Datang di Biro Hukum</h1>
-      <h1 class="display-5 fw-bold">Sekretariat Daerah Provinsi Kalimantan Utara</h1>
-      <p class="lead">Kami siap membantu kebutuhan administrasi Anda dengan cepat, mudah, dan transparan.</p>
-      <a href="#layanan" class="btn btn-light btn-lg mt-3">Lihat Layanan</a>
-    </div>
-  </section>
-
-  <!-- LAYANAN -->
-  <section id="layanan" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-4 text-primary">Daftar Layanan</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">PERDA & PERGUB</h5>
-              <p class="card-text">Pengajuan Perda & Pergub Melalui Apliasi E-Perda.</p>
-              <a href="#" class="btn btn-primary">Ajukan Sekarang</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">SK GUBERNUR & SK SEKDA</h5>
-              <p class="card-text">Pengajuan SK Gubernur & SK Sekda Melalui Aplikasi Kegub Kaltara di Hati</p>
-              <a href="#" class="btn btn-primary">Ajukan Sekarang</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Konsultasi</h5>
-              <p class="card-text">Dapatkan informasi dan konsultasi terkait pelayanan publik dan administrasi.</p>
-              <a href="#" class="btn btn-primary">Konsultasi</a>
-            </div>
-          </div>
-        </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <h5>SK GUBERNUR & SK SEKDA</h5>
+        <p>Pengajuan SK Gubernur & Sekda melalui Aplikasi Kegub Kaltara Hati.</p>
+        <a href="#" class="btn btn-primary">Ajukan Sekarang</a>
       </div>
     </div>
-  </section>
 
-  <!-- KONTAK -->
-  <section id="kontak" class="bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-4 text-primary">Hubungi Kami</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <form id="formKontak" class="p-4 border rounded bg-white shadow-sm">
-            <div class="mb-3">
-              <label class="form-label">Nama Lengkap</label>
-              <input type="text" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Pesan</label>
-              <textarea class="form-control" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
-          </form>
-        </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-3">
+        <h5>Konsultasi</h5>
+        <p>Informasi & konsultasi terkait pelayanan publik dan administrasi.</p>
+        <a href="#" class="btn btn-primary">Konsultasi</a>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p class="mb-0">&copy; 2025 Biro Hukum</p>
-  </footer>
+  </div>
+</section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('formKontak').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Pesan Anda telah dikirim. Terima kasih!');
-      this.reset();
-    });
-  </script>
+<!-- FOOTER -->
+<footer>
+  © 2024 Biro Hukum Provinsi Kalimantan Utara
+</footer>
+
+<!-- SLIDESHOW JAVASCRIPT -->
+<script>
+let slideIndex = 0;
+const slides = document.querySelectorAll(".hero-slideshow .slide");
+
+function showSlides() {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+}
+
+setInterval(showSlides, 5000); // ganti slide setiap 5 detik
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
